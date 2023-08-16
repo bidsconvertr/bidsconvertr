@@ -43,8 +43,8 @@ Depends:
     shinyDirectoryInput (>= 0.2.0),
     svDialogs (>= 1.1.0)
 VignetteBuilder: knitr
-URL: https://github.com/wulms/bidsconvertr
-BugReports: https://github.com/wulms/bidsconvertr/issues
+URL: https://github.com/bidsconvertr/bidsconvertr
+BugReports: https://github.com/bidsconvertr/bidsconvertr/issues
 Imports: 
 Remotes: 
     muschellij2/neurobase,
