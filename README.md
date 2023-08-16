@@ -5,10 +5,10 @@
 
 [![DOI](https://zenodo.org/badge/448850893.svg)](https://zenodo.org/badge/latestdoi/448850893)
 [![BIDS](https://img.shields.io/badge/BIDS-v1.8.0-blue)](https://bids-specification.readthedocs.io/en/v1.8.0/)
-[![Github](https://img.shields.io/github/v/release/wulms/bidsconvertr.svg)](https://github.com/wulms/bidsconvertr)
+[![Github](https://img.shields.io/github/v/release/bidsconvertr/bidsconvertr.svg)](https://github.com/bidsconvertr/bidsconvertr)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-<a href='https://wulms.bidsconvertr.io'><img src="inst/figure/BIDSconvertR.png" align="right" height="150"/></a> The hexagonal sticker was made using the [iconspackage](https://github.com/mitchelloharawild/icons) and based on the MRI svg graphics provided by Flaticon and mavadee [FlaticonLink](https://www.flaticon.com/free-icons/mri). |
+<a href='https://bidsconvertr.bidsconvertr.io'><img src="inst/figure/BIDSconvertR.png" align="right" height="150"/></a> The hexagonal sticker was made using the [iconspackage](https://github.com/mitchelloharawild/icons) and based on the MRI svg graphics provided by Flaticon and mavadee [FlaticonLink](https://www.flaticon.com/free-icons/mri). |
 
 
 
@@ -52,7 +52,7 @@ The code is documented at **<https://bidsconvertr.github.io>**. Please visit the
 
 # How to cite: 
 
-Wulms, Niklas. 2023. *Wulms/Bidsconvertr*. Zenodo. <https://doi.org/10.5281/ZENODO.5878407>.
+Wulms, Niklas. 2023. *BIDSconvertR*. Zenodo. <https://doi.org/10.5281/ZENODO.5878407>.
 
 ----
 ## Milestones / To-Do's
