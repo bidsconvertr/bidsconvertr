@@ -446,7 +446,7 @@ edit_session_df <- function(){
                                                    default = df$session_BIDS[i])$res
         }
       if(str_detect(df$session_BIDS[i], "(?<!^ses)([:punct:]|[:symbol:])+")){
-        svDialogs::dlg_message("You are not allowed to use special symbols inside of session-IDs in BIDS. We removed invalid symbols.")
+        svDialogs::dlg_message("Warning: Invalid symbols identified in session-IDs. The invalid symbols are removed automatically.")
         df$session_BIDS[i] <- df$session_BIDS[i] %>%
           stringr::str_remove_all("(?<!^ses)([:punct:]|[:symbol:])+")
       }
