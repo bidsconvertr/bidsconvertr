@@ -205,7 +205,7 @@ cleaning_subject_ids <- function() {
 
   invalid_sub_names <- subject_session_df %>%
     filter(str_detect(subject, "(?<!^sub)([:punct:]|[:symbol:])+")) %>%
-    mutate(new_subject_id, str_remove_all("(?<!^sub)([:punct:]|[:symbol:])+"))
+    mutate(new_subject_id = str_remove_all(subject, "(?<!^sub)([:punct:]|[:symbol:])+"))
 
   if(nrow(invalid_sub_names) > 0) {
     svDialogs::dlg_message("Warning: Invalid symbols identified in subject-IDs. The invalid symbols are removed automatically.")
