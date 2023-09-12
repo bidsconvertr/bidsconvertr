@@ -125,7 +125,7 @@ get_user_input <- function(){
 
   # input folder
   print("Configuring input (root folder containing DICOM's), the order of 'session' and 'subject' folders and the output path.\n\n")
-  svDialogs::dlg_message("Please select your input folder now. It contains folders per session & subject or subject & session with the DICOM data. Your folder must be structured as follows: \n\n 'root/sessions/subjects/dicoms' \n\n 'root/subjects/sessions/dicoms'")
+  svDialogs::dlg_message("Please select your input folder now. It contains folders per session and subject or subject and session with the DICOM data. Your folder must be structured as follows: \n\n 'root/sessions/subjects/dicoms' \n\n 'root/subjects/sessions/dicoms', ")
 
 
   switch_input_folder <- 2
@@ -731,7 +731,7 @@ check_folder_order <- function() {
   }
 
   cat("These are your input folders.
-      'folder_short' should represent the folders, that contain the DICOM files per session & subject.")
+      'folder_short' should represent the folders, that contain the DICOM files per session and subject.")
   cat("\n\n")
   print(paste("You selected the input folder hierarchy: ", folder_order))
   cat("\n\n")
@@ -1888,10 +1888,10 @@ editTable <- function(DF, outdir=getwd(), outfilename="table"){
                             ),
 
                             mainPanel(
-                              actionButton("save", "Validate & Save"),
+                              actionButton("save", "Validate and Save"),
 
                               #br(),
-                              h4('Please edit (double-click) ALL the **lightgrey** (not edited) columns or unselect (with "relevant" = 0). Then "Validate & Save".\n'),
+                              h4('Please edit (double-click) ALL the **lightgrey** (not edited) columns or unselect (with "relevant" = 0). Then "Validate and Save".\n'),
                               tags$ul(
                                 tags$li('**Red** indicates non-valid "BIDS_sequence", "BIDS_type" or combination of both. You are not able to "Save" with incompatible combinations.\n'),
                                 tags$li('**Green** indicates a valid combination of "BIDS_sequence" and "BIDS_type" that is converted to BIDS (when "relevant" = 1).'),
