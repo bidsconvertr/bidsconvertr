@@ -84,10 +84,9 @@ select_user_settings_file <- function(){
     print("Please select the 'user_settings.R' file now:")
 
 
-    settings_file <<- choose.files(# default = "user_settings.R",
-                                   caption = "Select 'user_settings.R' file.",
-                                   multi = FALSE,
-                                   filter = Filters[c("R"),]) %>%
+    settings_file <<- rstudioapi::selectFile(
+      caption = "Select 'user_settings.R' file.",
+      filter = "*.R") %>%
       normalizePath(., winslash = "/")
 
 
