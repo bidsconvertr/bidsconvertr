@@ -52,11 +52,11 @@ The code is documented at **<https://bidsconvertr.github.io>**. Please visit the
 
 # How to cite: 
 
+Wulms N, Eppe S, Dehghan‑Nayyeri M, Streeter A, Bonberg N, Berger K, Sundermann B, Minnerup H. (2023). *The
+R package for DICOM to brain imaging data structure conversion* Nature Scientific Data. 2023 Oct 04. doi: 10.1038/s41597‑023‑
+02583‑4 <https://doi.org/10.1038/s41597-023-02583-4>
+
 Wulms, Niklas. 2023. *BIDSconvertR*. Zenodo. <https://doi.org/10.5281/ZENODO.5878407>.
 
-----
-## Milestones / To-Do's
 
-- publish the BIDSconvertR
-- testing the tool on MAC systems 
 
