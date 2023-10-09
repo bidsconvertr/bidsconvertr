@@ -84,10 +84,9 @@ select_user_settings_file <- function(){
     print("Please select the 'user_settings.R' file now:")
 
 
-    settings_file <<- choose.files(# default = "user_settings.R",
-                                   caption = "Select 'user_settings.R' file.",
-                                   multi = FALSE,
-                                   filter = Filters[c("R"),]) %>%
+    settings_file <<- rstudioapi::selectFile(
+      caption = "Select 'user_settings.R' file.",
+      filter = "*.R") %>%
       normalizePath(., winslash = "/")
 
 
@@ -126,7 +125,7 @@ get_user_input <- function(){
 
   # input folder
   print("Configuring input (root folder containing DICOM's), the order of 'session' and 'subject' folders and the output path.\n\n")
-  svDialogs::dlg_message("Please select your input folder now. It contains folders per session & subject or subject & session with the DICOM data. Your folder must be structured as follows: \n\n 'root/sessions/subjects/dicoms' \n\n 'root/subjects/sessions/dicoms'")
+  svDialogs::dlg_message("Please select your input folder now. It contains folders per session and subject or subject and session with the DICOM data. Your folder must be structured as follows: \n\n 'root/sessions/subjects/dicoms' \n\n 'root/subjects/sessions/dicoms', ")
 
 
   switch_input_folder <- 2
@@ -205,7 +204,7 @@ cleaning_subject_ids <- function() {
 
   invalid_sub_names <- subject_session_df %>%
     filter(str_detect(subject, "(?<!^sub)([:punct:]|[:symbol:])+")) %>%
-    mutate(new_subject_id, str_remove_all("(?<!^sub)([:punct:]|[:symbol:])+"))
+    mutate(new_subject_id = str_remove_all(subject, "(?<!^sub)([:punct:]|[:symbol:])+"))
 
   if(nrow(invalid_sub_names) > 0) {
     svDialogs::dlg_message("Warning: Invalid symbols identified in subject-IDs. The invalid symbols are removed automatically.")
@@ -446,7 +445,7 @@ edit_session_df <- function(){
                                                    default = df$session_BIDS[i])$res
         }
       if(str_detect(df$session_BIDS[i], "(?<!^ses)([:punct:]|[:symbol:])+")){
-        svDialogs::dlg_message("You are not allowed to use special symbols inside of session-IDs in BIDS. We removed invalid symbols.")
+        svDialogs::dlg_message("Warning: Invalid symbols identified in session-IDs. The invalid symbols are removed automatically.")
         df$session_BIDS[i] <- df$session_BIDS[i] %>%
           stringr::str_remove_all("(?<!^ses)([:punct:]|[:symbol:])+")
       }
@@ -732,7 +731,7 @@ check_folder_order <- function() {
   }
 
   cat("These are your input folders.
-      'folder_short' should represent the folders, that contain the DICOM files per session & subject.")
+      'folder_short' should represent the folders, that contain the DICOM files per session and subject.")
   cat("\n\n")
   print(paste("You selected the input folder hierarchy: ", folder_order))
   cat("\n\n")
@@ -1889,10 +1888,10 @@ editTable <- function(DF, outdir=getwd(), outfilename="table"){
                             ),
 
                             mainPanel(
-                              actionButton("save", "Validate & Save"),
+                              actionButton("save", "Validate and Save"),
 
                               #br(),
-                              h4('Please edit (double-click) ALL the **lightgrey** (not edited) columns or unselect (with "relevant" = 0). Then "Validate & Save".\n'),
+                              h4('Please edit (double-click) ALL the **lightgrey** (not edited) columns or unselect (with "relevant" = 0). Then "Validate and Save".\n'),
                               tags$ul(
                                 tags$li('**Red** indicates non-valid "BIDS_sequence", "BIDS_type" or combination of both. You are not able to "Save" with incompatible combinations.\n'),
                                 tags$li('**Green** indicates a valid combination of "BIDS_sequence" and "BIDS_type" that is converted to BIDS (when "relevant" = 1).'),
